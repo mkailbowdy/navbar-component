@@ -1,0 +1,163 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+body {
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+  min-height: 200vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding: 16px;
+  background-image: linear-gradient(to bottom, #f9fafb, #d2d6db);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
+
+.navbar {
+  display:flex;
+  position:sticky;
+  align-content: center;
+  justify-content: space-between;
+  height: 68px;
+  top:16px;
+  transform: translateY(0);
+  transition: transform 100ms ease-in-out;
+}
+
+.navbar.hide {
+  /*display: none;*/
+  transform: translateY(-110%); /* slide in */
+}
+
+.navbar__logo {
+  margin: auto 0;
+  width: 112px;
+  height: 32px;
+}
+
+.navbar__content{
+  display:none;
+}
+
+.navbar__content__links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  padding-left: 16px;
+}
+
+#slideout-menu {
+  /* Add these properties */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left:0;
+  height: 100%;
+  width: 300px;
+  padding: 32px 16px;
+  gap:32px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#slideout-menu.open {
+  transform: translateX(0); /* slide in */
+}
+
+.nav__mobile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__content__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+.navbar__content__actions button {
+  width: 100%;
+  height: 44px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.navbar__content__actions .primary-button {
+  background-color: #4338CA;
+  color: white;
+}
+
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+  .navbar {
+    gap: 95px;
+    padding: 0 112px;
+  }
+  .navbar__content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+  .navbar__content__links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .navbar__content__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .navbar__content__actions button {
+    width:125px;
+    height: 44px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .navbar__btn--open {
+    display: none;
+  }
+  #mobile-menu-button {
+    display:none;
+  }
+  #slideout-menu {
+    display: none;
+  }
+
+}
